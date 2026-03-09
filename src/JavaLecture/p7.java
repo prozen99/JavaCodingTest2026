@@ -4,14 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class p4 {
+public class p7 {
     public static void main(String[] args) throws IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        int n=Integer.parseInt(br.readLine());
-        for(int i=0;i<n;i++){
-            String str=br.readLine();
-            StringBuilder sb=new StringBuilder(str).reverse();
-            System.out.println(sb.toString());
+        String str=br.readLine().toLowerCase();
+        StringBuilder sb=new StringBuilder(str).reverse();
+        if(str.contentEquals(sb)){
+            System.out.println("YES");
+        }else{
+            System.out.println("NO");
         }
     }
 }

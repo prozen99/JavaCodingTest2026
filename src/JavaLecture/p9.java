@@ -4,18 +4,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class p3 {
+public class p9 {
     public static void main(String[] args) throws IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        String[] str=br.readLine().split(" ");
-        int max=-99999;
-        int maxidx=0;
-        for(int i=0;i<str.length;i++){
-            if(str[i].length()>max){
-                max=str[i].length();
-                maxidx=i;
+        String str=br.readLine();
+        String result="";
+        char[] c=str.toCharArray();
+        for(int i=0;i<c.length;i++){
+            if(Character.isDigit(c[i])){
+                result+=String.valueOf(c[i]);
             }
         }
-        System.out.println(str[maxidx]);
+        System.out.println(Integer.parseInt(result));
     }
 }

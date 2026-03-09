@@ -3,17 +3,20 @@ package JavaLecture;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 
-public class p2 {
+public class p6 {
     public static void main(String[] args) throws IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         String str=br.readLine();
+        char[] c=str.toCharArray();
+        Set<Character> set=new HashSet<>();
         StringBuilder sb=new StringBuilder();
-        for(int i=0;i<str.length();i++){
-            if(Character.isUpperCase(str.charAt(i))){
-                sb.append(Character.toLowerCase(str.charAt(i)));
-            }else{
-                sb.append(Character.toUpperCase(str.charAt(i)));
+        for(int i=0;i<c.length;i++){
+            if(!set.contains(c[i])){
+                set.add(c[i]);
+                sb.append(c[i]);
             }
         }
         System.out.println(sb.toString());
